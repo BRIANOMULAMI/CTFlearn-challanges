@@ -1,0 +1,99 @@
+└─$ ls
+AGT.png
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/07601]
+└─$ binwalk --dd=.* AGT.png
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+9584          0x2570          Zip archive data, at least v1.0 to extract, name: Secret Stuff.../
+9646          0x25AE          Zip archive data, at least v2.0 to extract, name: Secret Stuff.../.DS_Store
+10270         0x281E          Zip archive data, at least v1.0 to extract, name: __MACOSX/
+10325         0x2855          Zip archive data, at least v1.0 to extract, name: __MACOSX/Secret Stuff.../
+10396         0x289C          Zip archive data, at least v2.0 to extract, name: __MACOSX/Secret Stuff.../._.DS_Store
+10546         0x2932          Zip archive data, at least v1.0 to extract, name: Secret Stuff.../Don't Open This.../
+10627         0x2983          Zip archive data, at least v2.0 to extract, name: Secret Stuff.../Don't Open This.../.DS_Store
+10988         0x2AEC          Zip archive data, at least v1.0 to extract, name: __MACOSX/Secret Stuff.../Don't Open This.../
+11078         0x2B46          Zip archive data, at least v2.0 to extract, name: __MACOSX/Secret Stuff.../Don't Open This.../._.DS_Store
+11247         0x2BEF          Zip archive data, at least v2.0 to extract, name: Secret Stuff.../Don't Open This.../I Warned You.jpeg
+150550        0x24C16         Zip archive data, at least v2.0 to extract, name: __MACOSX/Secret Stuff.../Don't Open This.../._I Warned You.jpeg
+151810        0x25102         End of Zip archive, footer length: 22
+151832        0x25118         Zip archive data, at least v1.0 to extract, name: Secret Stuff.../
+151894        0x25156         Zip archive data, at least v2.0 to extract, name: Secret Stuff.../.DS_Store
+152518        0x253C6         Zip archive data, at least v1.0 to extract, name: __MACOSX/
+152573        0x253FD         Zip archive data, at least v1.0 to extract, name: __MACOSX/Secret Stuff.../
+152644        0x25444         Zip archive data, at least v2.0 to extract, name: __MACOSX/Secret Stuff.../._.DS_Store
+152794        0x254DA         Zip archive data, at least v1.0 to extract, name: Secret Stuff.../Don't Open This.../
+152875        0x2552B         Zip archive data, at least v2.0 to extract, name: Secret Stuff.../Don't Open This.../.DS_Store
+153236        0x25694         Zip archive data, at least v1.0 to extract, name: __MACOSX/Secret Stuff.../Don't Open This.../
+153326        0x256EE         Zip archive data, at least v2.0 to extract, name: __MACOSX/Secret Stuff.../Don't Open This.../._.DS_Store
+153495        0x25797         Zip archive data, at least v2.0 to extract, name: Secret Stuff.../Don't Open This.../I Warned You.jpeg
+292768        0x477A0         Zip archive data, at least v2.0 to extract, name: __MACOSX/Secret Stuff.../Don't Open This.../._I Warned You.jpeg
+294028        0x47C8C         End of Zip archive, footer length: 22
+294050        0x47CA2         Zip archive data, at least v1.0 to extract, name: Secret Stuff.../
+294112        0x47CE0         Zip archive data, at least v2.0 to extract, name: Secret Stuff.../.DS_Store
+294736        0x47F50         Zip archive data, at least v1.0 to extract, name: Secret Stuff.../Don't Open This.../
+294817        0x47FA1         Zip archive data, at least v2.0 to extract, name: Secret Stuff.../Don't Open This.../.DS_Store
+295162        0x480FA         Zip archive data, at least v2.0 to extract, name: Secret Stuff.../Don't Open This.../I Warned You.jpeg
+434433        0x6A101         Zip archive data, at least v1.0 to extract, name: __MACOSX/
+434488        0x6A138         Zip archive data, at least v1.0 to extract, name: __MACOSX/Secret Stuff.../
+434559        0x6A17F         Zip archive data, at least v1.0 to extract, name: __MACOSX/Secret Stuff.../Don't Open This.../
+434649        0x6A1D9         Zip archive data, at least v2.0 to extract, name: __MACOSX/Secret Stuff.../Don't Open This.../._I Warned You.jpeg
+435702        0x6A5F6         End of Zip archive, footer length: 22
+
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/07601]
+└─$ ls
+AGT.png  _AGT.png.extracted
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/07601]
+└─$ cd _AGT.png.extracted 
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/07601/_AGT.png.extracted]
+└─$ ls
+0  25102  25118  2570  47C8C  47CA2  6A5F6
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/07601/_AGT.png.extracted]
+└─$ file 25118              
+25118: Zip archive data, at least v1.0 to extract, compression method=store
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/07601/_AGT.png.extracted]
+└─$ unzip 25118 
+Archive:  25118
+warning [25118]:  142218 extra bytes at beginning or within zipfile
+  (attempting to process anyway)
+   creating: Secret Stuff.../
+  inflating: Secret Stuff.../.DS_Store  
+   creating: Secret Stuff.../Don't Open This.../
+  inflating: Secret Stuff.../Don't Open This.../.DS_Store  
+  inflating: Secret Stuff.../Don't Open This.../I Warned You.jpeg  
+   creating: __MACOSX/
+   creating: __MACOSX/Secret Stuff.../
+   creating: __MACOSX/Secret Stuff.../Don't Open This.../
+  inflating: __MACOSX/Secret Stuff.../Don't Open This.../._I Warned You.jpeg  
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/07601/_AGT.png.extracted]
+└─$ ls
+ 0   25102   25118   2570   47C8C   47CA2   6A5F6  'Secret Stuff...'   __MACOSX
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/07601/_AGT.png.extracted]
+└─$ cd Secret\ Stuff...     
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/ctflearn/07601/_AGT.png.extracted/Secret Stuff...]
+└─$ ls
+"Don't Open This..."
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/ctflearn/07601/_AGT.png.extracted/Secret Stuff...]
+└─$ cd Don\'t\ Open\ This... 
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/07601/_AGT.png.extracted/Secret Stuff.../Don't Open This...]
+└─$ ls
+'I Warned You.jpeg'
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/07601/_AGT.png.extracted/Secret Stuff.../Don't Open This...]
+└─$ strings I\ Warned\ You.jpeg | grep CTF
+ABCTF{Du$t1nS_D0jo}1r
+                                                                                                   
+┌──(brian㉿BRIAN)-[~/…/07601/_AGT.png.extracted/Secret Stuff.../Don't Open This...]
+└─$ 

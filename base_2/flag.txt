@@ -1,0 +1,36 @@
+ mkdir base_2   
+                                                                                      
+┌──(brian㉿BRIAN)-[~/Downloads/my docs/CTF/ctflearn]
+└─$ cd base_2 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/base_2]
+└─$ subl file 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/base_2]
+└─$ ls
+file
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/base_2]
+└─$ cat file           
+Q1RGe0ZsYWdneVdhZ2d5UmFnZ3l9                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/base_2]
+└─$ echo "^[[200~Q1RGe0ZsYWdneVdhZ2d5UmFnZ3l9 
+dquote> 
+dquote> 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/base_2]
+└─$ echo "Q1RGe0ZsYWdneVdhZ2d5UmFnZ3l9" | base64 
+UTFSR2UwWnNZV2RuZVZkaFoyZDVVbUZuWjNsOQo=
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/base_2]
+└─$ echo "UTFSR2UwWnNZV2RuZVZkaFoyZDVVbUZuWjNsOQo=" | base64 -d
+Q1RGe0ZsYWdneVdhZ2d5UmFnZ3l9
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/base_2]
+└─$ echo "UTFSR2UwWnNZV2RuZVZkaFoyZDVVbUZuWjNsOQo=" | base64 -d
+Q1RGe0ZsYWdneVdhZ2d5UmFnZ3l9
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/base_2]
+└─$ echo "Q1RGe0ZsYWdneVdhZ2d5UmFnZ3l9
+" | base64 -d
+CTF{FlaggyWaggyRaggy}                                                                                      

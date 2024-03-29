@@ -1,0 +1,64 @@
+
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Tux]
+└─$ ls
+Tux.jpg  _Tux.jpg.extracted
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Tux]
+└─$ strinng Tux.jpg                          
+strinng: command not found
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Tux]
+└─$ strings Tux.jpg                          
+JFIF
+'ICAgICAgUGFzc3dvcmQ6IExpbnV4MTIzNDUK
+ $.' ",#
+
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Tux]
+└─$ echo "ICAgICAgUGFzc3dvcmQ6IExpbnV4MTIzNDUK" | base64 -d
+      Password: Linux12345
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Tux]
+└─$ ll
+total 12
+-rw-r--r-- 1 brian brian 5703 Jul 22  2020 Tux.jpg
+drwxr-xr-x 2 brian brian 4096 Mar 26 18:37 _Tux.jpg.extracted
+                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Tux]
+└─$ binwalk --extract --dd=".*" Tux.jpg
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+5488          0x1570          Zip archive data, encrypted at least v1.0 to extract, compressed size: 39, uncompressed size: 27, name: flag
+5679          0x162F          End of Zip archive, footer length: 22
+
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Tux]
+└─$ ls -al
+total 24
+drwxr-xr-x 4 brian brian 4096 Mar 26 19:34 .
+drwxr-xr-x 4 brian brian 4096 Mar 26 19:14 ..
+-rw-r--r-- 1 brian brian 5703 Jul 22  2020 Tux.jpg
+drwxr-xr-x 2 brian brian 4096 Mar 26 19:34 _Tux.jpg-0.extracted
+drwxr-xr-x 2 brian brian 4096 Mar 26 18:37 _Tux.jpg.extracted
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Tux]
+└─$ cd -Tux.jpg.extracted
+cd: no such file or directory: -Tux.jpg.extracted
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Tux]
+└─$ cd _Tux.jpg.extracted
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/Tux/_Tux.jpg.extracted]
+└─$ LS
+LS: command not found
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/Tux/_Tux.jpg.extracted]
+└─$ ls    
+0  1570  162F  flag
+                                                                                          
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/Tux/_Tux.jpg.extracted]
+└─$ cat flag             
+CTFlearn{Linux_Is_Awesome}

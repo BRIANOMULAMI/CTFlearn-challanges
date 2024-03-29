@@ -1,0 +1,38 @@
+ls
+PurpleThing.jpeg
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/bin_walk]
+└─$ binwalk --dd=.* PurpleThing.jpeg   
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 780 x 720, 8-bit/color RGBA, non-interlaced
+41            0x29            Zlib compressed data, best compression
+153493        0x25795         PNG image, 802 x 118, 8-bit/color RGBA, non-interlaced
+
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/bin_walk]
+└─$ ls
+PurpleThing.jpeg  _PurpleThing.jpeg.extracted
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/bin_walk]
+└─$ cd _PurpleThing.jpeg.extracted 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/bin_walk/_PurpleThing.jpeg.extracted]
+└─$ ls
+0  25795  29  29-0
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/bin_walk/_PurpleThing.jpeg.extracted]
+└─$ file 29
+29: empty
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/bin_walk/_PurpleThing.jpeg.extracted]
+└─$ file 25795    
+25795: PNG image data, 802 x 118, 8-bit/color RGBA, non-interlaced
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/bin_walk/_PurpleThing.jpeg.extracted]
+└─$ eog 25795    
+Failed to register: Timeout was reached
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/bin_walk/_PurpleThing.jpeg.extracted]
+└─$ display 25795    

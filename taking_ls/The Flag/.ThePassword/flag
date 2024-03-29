@@ -1,0 +1,125 @@
+                                                                                      
+┌──(brian㉿BRIAN)-[~/Downloads/my docs/CTF/ctflearn]
+└─$ ls
+Tux  character_encoding  forencics101
+                                                                                      
+┌──(brian㉿BRIAN)-[~/Downloads/my docs/CTF/ctflearn]
+└─$ mkdir taking_ls
+                                                                                      
+┌──(brian㉿BRIAN)-[~/Downloads/my docs/CTF/ctflearn]
+└─$ cd taking_ls 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/taking_ls]
+└─$ wget https://mega.nz/#!mCgBjZgB!_FtmAm8s_mpsHr7KWv8GYUzhbThNn0I8cHMBi4fJQp8
+zsh: event not found: mCgBjZgB!
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/taking_ls]
+└─$ ls
+'The Flag.zip'
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/taking_ls]
+└─$ file The\ Flag.zip 
+The Flag.zip: Zip archive data, at least v1.0 to extract, compression method=store
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/taking_ls]
+└─$ unzip The\ Flag.zip 
+Archive:  The Flag.zip
+   creating: The Flag/
+  inflating: The Flag/.DS_Store      
+   creating: __MACOSX/
+   creating: __MACOSX/The Flag/
+  inflating: __MACOSX/The Flag/._.DS_Store  
+   creating: The Flag/.ThePassword/
+  inflating: The Flag/.ThePassword/ThePassword.txt  
+  inflating: The Flag/The Flag.pdf   
+  inflating: __MACOSX/The Flag/._The Flag.pdf  
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/taking_ls]
+└─$ ls
+'The Flag'  'The Flag.zip'   __MACOSX
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/taking_ls]
+└─$ cd The\ Flag 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ ls
+'The Flag.pdf'
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ file The\ Flag.pdf 
+The Flag.pdf: PDF document, version 1.4, 1 page(s)
+                                                                                      
+
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ view The\ Flag.pdf     
+
+zsh: suspended  view The\ Flag.pdf
+                                                                                      
+                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ echo "9c63f2f4dcb63fe1cc6286dbd16d69fc" | base64   
+OWM2M2YyZjRkY2I2M2ZlMWNjNjI4NmRiZDE2ZDY5ZmMK
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ echo "OWM2M2YyZjRkY2I2M2ZlMWNjNjI4NmRiZDE2ZDY5ZmMK" | base64
+T1dNMk0yWXlaalJrWTJJMk0yWmxNV05qTmpJNE5tUmlaREUyWkRZNVptTUsK
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ echo "86a74bc473659fce0c37ac30e23e2b5100000000000000000000000000000000" | base64
+ODZhNzRiYzQ3MzY1OWZjZTBjMzdhYzMwZTIzZTJiNTEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
+MDAwMDAwMAo=
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ echo "ODZhNzRiYzQ3MzY1OWZjZTBjMzdhYzMwZTIzZTJiNTEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw 
+MDAwMDAwMAo=
+" | base64
+T0RaaE56UmlZelEzTXpZMU9XWmpaVEJqTXpkaFl6TXdaVEl6WlRKaU5URXdNREF3TURBd01EQXdN
+REF3TURBd01EQXdNREF3TURBdwpNREF3TURBd01Bbz0KCg==
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ echo "ODZhNzRiYzQ3MzY1OWZjZTBjMzdhYzMwZTIzZTJiNTEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw 
+MDAwMDAwMAo=" | base64
+T0RaaE56UmlZelEzTXpZMU9XWmpaVEJqTXpkaFl6TXdaVEl6WlRKaU5URXdNREF3TURBd01EQXdN
+REF3TURBd01EQXdNREF3TURBdwpNREF3TURBd01Bbz0K
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ ll
+total 20
+-rw-r--r-- 1 brian brian 16647 Oct 30  2016 'The Flag.pdf'
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ ls al 
+ls: cannot access 'al': No such file or directory
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ ls -al
+total 40
+drwxr-xr-x 3 brian brian  4096 Oct 30  2016  .
+drwxr-xr-x 4 brian brian  4096 Mar 27 14:10  ..
+-rw-r--r-- 1 brian brian  6148 Oct 30  2016  .DS_Store
+drwxr-xr-x 2 brian brian  4096 Oct 30  2016  .ThePassword
+-rw-r--r-- 1 brian brian 16647 Oct 30  2016 'The Flag.pdf'
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/taking_ls/The Flag]
+└─$ cd .ThePassword  
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/ctflearn/taking_ls/The Flag/.ThePassword]
+└─$ ls    
+ThePassword.txt
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/ctflearn/taking_ls/The Flag/.ThePassword]
+└─$ cat ThePassword.txt 
+Nice Job!  The Password is "Im The Flag".
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/ctflearn/taking_ls/The Flag/.ThePassword]
+└─$ 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/ctflearn/taking_ls/The Flag/.ThePassword]
+└─$ subl flag            
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/ctflearn/taking_ls/The Flag/.ThePassword]
+└─$ 
+
+
+flag  = ABCTF{T3Rm1n4l_is_COOl}

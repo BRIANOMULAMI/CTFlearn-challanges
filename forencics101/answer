@@ -1,0 +1,1 @@
+strings brian.jpg | grep flag

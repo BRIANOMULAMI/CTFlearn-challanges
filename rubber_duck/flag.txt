@@ -1,0 +1,2 @@
+strings RubberDuck.jpg | grep CTF --color=none
+CTFlearn{ILoveJakarta}
