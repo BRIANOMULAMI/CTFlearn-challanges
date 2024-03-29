@@ -1,4 +1,4 @@
-                                                                                      
+ #THIS IS THE Base64                                                                                      
 ┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/QR_code]
 └─$ echo "c3ludCB2ZiA6IGEwX29icWxfczBldHJnX2RlX3BicXI=" | base64 -d | tr 
                                                                                       
