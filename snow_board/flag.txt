@@ -1,0 +1,20 @@
+ cd snow_board        
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/snow_board]
+└─$ ls
+Snowboard.jpg
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/snow_board]
+└─$ strings Snowboard.jpg   
+JFIF
+CTFlearn{CTFIsEasy!!!}
+Q1RGbGVhcm57U2tpQmFuZmZ9Cg==
+Exif
+Canon
+Canon EOS 6D Mark II
+GIMP 2.10.6
+
+
+# we find Q1RGbGVhcm57U2tpQmFuZmZ9Cg== that we will need do decode
+echo "Q1RGbGVhcm57U2tpQmFuZmZ9Cg==" | base64 -d
+CTFlearn{SkiBanff}

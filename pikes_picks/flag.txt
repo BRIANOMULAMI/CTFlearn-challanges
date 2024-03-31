@@ -1,0 +1,26 @@
+brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/pikes_picks]
+└─$ strings PikesPeak.jpg > strings.txt
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/pikes_picks]
+└─$ ls
+PikesPeak.jpg  strings.txt
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/pikes_picks]
+└─$ grep "ctf" strings.txt                                  
+%ctflearn{MountainMountainMountain}
+ctflearning{AUCKLAND}
+ctfLEARN{MtDoom}
+6ctflearninglearning{Mordor.TongariroAlpineCrossing}
+$ctflearncTfLeARN{MountKosciuszko}
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/pikes_picks]
+└─$ grep "CTF" strings.txt
+CTFLEARN{PikesPeak}
+CTFLearn{Colorado}
+#cTfLeArN{CTFMountainCTFmOUNTAIN}
+CTF{AsPEN.Vail}
+CTFlearn{Gandalf}
++CTFLEARN{MountGedePangrangoNationalPark}
+
+
+correct flag is.........................CTFlearn{Gandalf}

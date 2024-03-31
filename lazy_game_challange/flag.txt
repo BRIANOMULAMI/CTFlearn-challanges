@@ -1,0 +1,27 @@
+Sorry you didn't made it !
+Play Again !...
+Better Luck next Time !.
+0Sorry you lost some money !..
+Your balance has been updated !.
+Current balance :  : 
+1000500$
+What the... how did you get that money (even when I tried to stop you)!? I guess you beat me!
+
+The flag is CTFlearn{d9029a08c55b936cbc9a30_i_wish_real_betting_games_were_like_this!}
+
+Thank you for playing ! 
+Made by John_123
+Small mods by theKidOfArcrania
+Give it a (+1) if you like !..
+                                                                                      
+#ALL YOU NEED 
+the logic behind is 
+    $500--1000000= 10000500
+    hence the betting amount should be -1000000
+
+
+#when prompted to enter the computer guesses
+  Enter 0 on all the bets because our main aim is to loose the money so that our mathematocal operation above can be implemented
+
+
+
