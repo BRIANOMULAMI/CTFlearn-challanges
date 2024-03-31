@@ -17,3 +17,5 @@ def decode_qr_code(image_path):
 if __name__ == "__main__":
     image_path = "/home/brian/Downloads/my docs/CTF/ctflearn/qrcode_inspector/inception.png"  # Replace this with the path to your image
     decode_qr_code(image_path)
+
+#replace the path with the exact path of the png file then its going to decode it
