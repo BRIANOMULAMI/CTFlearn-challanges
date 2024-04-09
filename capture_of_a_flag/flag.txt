@@ -1,0 +1,63 @@
+strings flag\ \(4\) | grep -i "GET /" 
+GET /api/system/cluster/nodes HTTP/1.1
+GET /api/cluster HTTP/1.1
+GET /api/system/notifications HTTP/1.1
+GET /?msg=ZmxhZ3tBRmxhZ0luUENBUH0= HTTP/1.1
+GET /api/system/notifications HTTP/1.1
+GET /api/system/cluster/nodes HTTP/1.1
+GET /icons/ HTTP/1.1
+GET /api/cluster HTTP/1.1
+GET /assets/css/site.css HTTP/1.1
+GET /assets/font-awesome/css/font-awesome.css HTTP/1.1
+GET /assets/css/pygments.css HTTP/1.1
+GET /carbon.js?zoneid=1673&serve=C6AILKT&placement=fontawesome HTTP/1.1
+GET /api/system/notifications HTTP/1.1
+GET /assets/img/logo-themeisle.png HTTP/1.1
+GET /assets/img/logo-wpbeginner.png HTTP/1.1
+GET /assets/js/site.js HTTP/1.1
+GET /assets/js/monetization.js HTTP/1.1
+GET /ads/C6AILKT.json?segment=placement:fontawesome&callback=_carbonads_go HTTP/1.1
+GET /assets/js/search.js HTTP/1.1
+GET /assets/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1
+GET /api/system/notifications HTTP/1.1
+GET /api/system/cluster/nodes HTTP/1.1
+GET /api/cluster HTTP/1.1
+GET /search?interval=minute&width=2909&relative=1209600&page=1&sortOrder=desc&q=type%3Alog%20AND%20ASA_Protocol%3ATCP%20AND%20NOT%20%28ASA_Source_IP%3A8.8.8.8%20OR%20ASA_Source_IP%3A8.8.4.4%29&rangetype=relative&fields=source%2CASA_Destination_IP%2CASA_Protocol%2CASA_Source_IP%2Cmessage&sortField=timestamp HTTP/1.1
+GET /config.js HTTP/1.1
+GET /api/system/sessions HTTP/1.1
+GET /api/ HTTP/1.1
+GET /api/inventory?zone=CVADP2Y&callback=_bsa_go&segment=placement%3Ademo HTTP/1.1
+GET /api/users/admin HTTP/1.1
+GET /api/search/decorators/available HTTP/1.1
+GET /api/streams HTTP/1.1
+GET /api/search/decorators HTTP/1.1
+GET /api/system/notifications HTTP/1.1
+GET /api/streams HTTP/1.1
+GET /api/system HTTP/1.1
+GET /api/system/jvm HTTP/1.1
+GET /api/system/cluster/nodes HTTP/1.1
+GET /api/search/saved HTTP/1.1
+GET /api/system/cluster_config/org.graylog2.indexer.searches.SearchesClusterConfig HTTP/1.1
+GET /api/system/fields HTTP/1.1
+GET /api/search/universal/relative?query=type%3Alog%20AND%20ASA_Protocol%3ATCP%20AND%20NOT%20%28ASA_Source_IP%3A8.8.8.8%20OR%20ASA_Source_IP%3A8.8.4.4%29&range=1209600&limit=150&sort=timestamp%3Adesc HTTP/1.1
+GET /api/streams HTTP/1.1
+GET /api/system/fields HTTP/1.1
+GET /api/system/cluster/nodes HTTP/1.1
+GET /api/system/inputs HTTP/1.1
+GET /api/search/universal/relative/histogram?query=type%3Alog%20AND%20ASA_Protocol%3ATCP%20AND%20NOT%20%28ASA_Source_IP%3A8.8.8.8%20OR%20ASA_Source_IP%3A8.8.4.4%29&range=1209600&interval=minute HTTP/1.1
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/capture_of_a_flag]
+└─$ 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/capture_of_a_flag]
+└─$ echo "=ZmxhZ3tBRmxhZ0luUENBUH0=" | base64 -d
+base64: invalid input
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/capture_of_a_flag]
+└─$ echo "=ZmxhZ3tBRmxhZ0luUENBUH0" | base64 -d 
+base64: invalid input
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/capture_of_a_flag]
+└─$ echo "ZmxhZ3tBRmxhZ0luUENBUH0" | base64 -d 
+flag{AFlagInPCAP}base64: invalid input
+                                                                             

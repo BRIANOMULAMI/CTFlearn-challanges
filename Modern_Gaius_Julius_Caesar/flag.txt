@@ -1,0 +1,16 @@
+#This is a keyboard shift cypher 
+
+#encoded word
+BUH'tdy,|Bim5y~Bdt76yQ
+
+#website used to do the decoding
+https://www.dcode.fr/keyboard-shift-cipher
+
+#word after being decoded
+CTFlearn{Cyb3rCae54r}
+
+#final step  
+add an underscore between the 2words
+
+#flag
+CTFlearn{Cyb3r_Cae54r}

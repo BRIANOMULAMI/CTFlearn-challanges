@@ -1,0 +1,53 @@
+subl flg.py 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/so_many_64s]
+└─$ chmod +x flg.py 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/so_many_64s]
+└─$ ls
+flag.py  flag.txt  flg.py
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/so_many_64s]
+└─$ python3 flg.py 
+Enter the file name containing the encoded data: flag.txt
+Decoded text: ABCTF{pr3tty_b4s1c_r1ght?}
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/so_many_64s]
+└─$ ls
+flag.py  flag.txt  flg.py
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/so_many_64s]
+└─$ rm flag.py
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/so_many_64s]
+└─$ ls
+flag.txt  flg.py
+
+
+#here is the python code that we executed
+import base64
+
+def decode_base64_multiple_layers(encoded_data):
+    decoded_data = encoded_data
+    try:
+        while True:
+            decoded_data = base64.b64decode(decoded_data)
+            decoded_data = decoded_data.decode('utf-8')
+    except:
+        pass
+    return decoded_data
+
+def main():
+    file_name = input("Enter the file name containing the encoded data: ")
+    try:
+        with open(file_name, 'r') as file:
+            encoded_text = file.read()
+            decoded_text = decode_base64_multiple_layers(encoded_text)
+            print("Decoded text:", decoded_text)
+    except FileNotFoundError:
+        print("File not found.")
+
+if __name__ == "__main__":
+    main()
+
+                          

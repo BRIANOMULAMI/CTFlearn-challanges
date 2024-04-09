@@ -1,0 +1,233 @@
+binwalk --dd='.*' oreo.jpg 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+9515          0x252B          RAR archive data, version 4.x, first volume type: MAIN_HEAD
+
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/milk_bets_friend]
+└─$ ls
+_oreo.jpg.extracted  oreo.jpg
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/milk_bets_friend]
+└─$ cd _oreo.jpg.extracted 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/milk_bets_friend/_oreo.jpg.extracted]
+└─$ ls
+0  252B
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/milk_bets_friend/_oreo.jpg.extracted]
+└─$ file 0       
+0: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 300x168, components 3
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/milk_bets_friend/_oreo.jpg.extracted]
+└─$ display 0    
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/milk_bets_friend/_oreo.jpg.extracted]
+└─$ file 252B    
+252B: RAR archive data, v4, os: Win32
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/milk_bets_friend/_oreo.jpg.extracted]
+└─$ strings 252B          
+Rar!
+1\b.jpg
+S*p)
+TVTTZZV\XXZ``\VX_
+p`ZXj
+npvz}
+;/)b
+*]n18_
+Qz}l
+K'F6
+dGOke
+r%7+
+$ywm
+eRbB
+roQg
+[g:K
+vgG:
+j6:]
+'kmG>
+HH]u
+~a>zdV
+wiD4
+7(qg
+|   4
+=Y.Hq ~'
+54""*|
+T0;Q
+?0q+Q
+;B(W&|j
+9Z_QjBZy?
+%D^d&
+uzEy
+0)ay
+#,&6
+/98,
+.M]B
+hfu?
+t\:o
+s<JS
+/#TS
+.+[5Na
+W[\2
+I,,+
+jm+:
+"8JL
+=b/R
+}q"RN
+N<Qre
+dg?i
+KsP8
+3Osq
+L0c>
+% I@d
+Zn }P
+uG@m
+=aLy
+e6wx
+]BHO
+v:7I)U
+k.Tr
+o,ug~
+Tpp6{j
+cKL3H
+vb(cR?
+r6G&AZ0B
+!7w-
+GYJy
+6cj=
+{S!^
+z$"}
+RsZl
+ soR
+%EwU
+A*"d.Ed
+Tj$Uj
+S-O.
+'".r
+I,Dq
+v_,4y
+Kq#i'
+~p\>
+DZb&
+N|9D
+\Z<~f
+This is not the flag you are looking for.Q"t
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/milk_bets_friend/_oreo.jpg.extracted]
+└─$ ls
+0  252B
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/milk_bets_friend/_oreo.jpg.extracted]
+└─$ 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/milk_bets_friend/_oreo.jpg.extracted]
+└─$ unrar x 252B 
+
+UNRAR 7.00 beta 2 freeware      Copyright (c) 1993-2023 Alexander Roshal
+
+
+Extracting from 252B
+
+Creating    1                                                         OK
+Extracting  1/b.jpg                                                   OK 
+Extracting  1/a                                                       OK 
+All OK
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/milk_bets_friend/_oreo.jpg.extracted]
+└─$ ls
+0  1  252B
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/milk_bets_friend/_oreo.jpg.extracted]
+└─$ cd 1                  
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/ctflearn/milk_bets_friend/_oreo.jpg.extracted/1]
+└─$ ls
+a  b.jpg
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/ctflearn/milk_bets_friend/_oreo.jpg.extracted/1]
+└─$ cat a       
+
+
+This is not the flag you are looking for.                                                                                      
+┌──(brian㉿BRIAN)-[~/…/ctflearn/milk_bets_friend/_oreo.jpg.extracted/1]
+└─$ display b.jpg 
+                                                                                      
+┌──(brian㉿BRIAN)-[~/…/ctflearn/milk_bets_friend/_oreo.jpg.extracted/1]
+└─$ strings b.jpg 
+JFIF
+"1$%)+...
+383-7(-.+
+%----------------------+----------------------+---7
+!1AQqa
+\5n`]
+xsLy
+.y fk
+vSk:M
+DzuMb
+_NZ@
+]ETyn
+Xg3H
+nBC_
+]95r
+C^^[p
+Q`';
+q`7'
+\\o*
+.   &
+04KZ
+)Qc&
+Q{k~
+st&[
+NW89
+Lk$[
+1Y79
+a0\A
+$;6g
+%mG+$
+DysM
+2em7
+6M>f
+Ztn`$F
+qUhTmjN
++67*
+e6hi 
+0d$j
+-ko)'
+CH;^u
+&Du=
+$t$Lv
+1/i 
+/1-6n
+Gx#GA
+M8n!
+iT0?
+kVI8
+`.}v
+gPl,c
+bsDKw
+O]=6V1
+Rx|!
+\l&>
+!G=*
+HSayi-9
+#X3i
+c>R2
+ $+cmk1
+u|h]a
+tEp#
+&Z  2`
+ZMmG
+a;}V
+{2sRpo7%V
+0=Q-C:
+[e[!A
+|5xk
++NgU
+;HO+dD
+D272}
+`h  :
+K`8m:-
+Finally, flag{eat_more_oreos}
