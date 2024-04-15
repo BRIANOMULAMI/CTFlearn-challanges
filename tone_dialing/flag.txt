@@ -1,0 +1,17 @@
+#pass the aoudio to the following site
+https://dtmf.netlify.app/
+67847010810197110123678289808479718265807289125
+
+#Then listen to the audio where there is two beaps separate the number in twos and where there 3beeps separate the numbers in 3s
+#The result will be as follows
+67 84 70 108 101 97 110 123 67 82 89 80 84 79 71 82 65 80 72 89 125
+
+#paste the divided Ascii throu the following site
+https://www.boxentriq.com/code-breaking/numbers-to-letters
+
+#set the Code Type....to ASCII
+
+# set the Language.....to English
+
+#flag
+CTFlean{CRYPTOGRAPHY}
