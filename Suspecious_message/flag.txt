@@ -1,0 +1,14 @@
+#This is a playfair cypher
+#The have the encypted message
+
+MQDzqdor{Ix4Oa41W_1F_B00h_m1YlqPpPP}
+
+
+#The Encryption key  ....the one in photo.png
+qwertyuiopasdfghklzxcvbnm
+
+
+#use https://www.boxentriq.com/code-breaking/playfair-cipher
+
+# The flag is 
+CTFLEARN{PL4YF41R_1S_C00L_C1PHERRRR}
