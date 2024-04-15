@@ -1,0 +1,26 @@
+#1st download the file and open it using wireshark
+#filter the tcp stream and check for the http traffic that has post
+#Here are the credentials that you will find
+POST /pages/main.html HTTP/1.1
+Referer: 10.0.0.1:8080/index.html
+User-Agent: User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9*/*;q=0.8
+Host: 10.0.0.1:8080
+Connection: Keep-Alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 43
+Accept-Language: en-US,en;q=0.5
+
+userid=hardawayn&pswrd=UEFwZHNqUlRhZQ%3D%3D
+
+# The base64 sting then decode it 
+└─$ ls
+data.pcap
+                                                                                     
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/digital_camouflage]
+└─$ echo "UEFwZHNqUlRhZQ==" | base64 -d
+PApdsjRTae                                                                                     
+
+
+#flag 
+PApdsjRTae 
