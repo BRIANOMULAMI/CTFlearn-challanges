@@ -1,0 +1,73 @@
+#The image header has a problem so the file can not be opened
+#use exheditor to modify the file header to match that of thr gif since the fie is a gif
+#sudo apt update
+#sudo apt install gimp
+
+#gimp will enable you to see tall the layers
+#you will find a base64 then decode it
+unopenable.gif
+                                                                                     
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ display unopenable.gif 
+display: Improper image header (unopenable.gif).
+                                                                                     
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ hexeditor unopenable.gif
+                                                                                                                                                                       
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ LS
+ls
+LS: command not found
+                                                                                                                                                                       
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ ls
+unopenable.gif
+                                                                                                                                                                       
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ display unopenable.gif
+display: Invalid colormap index (index 29 >= 2 colors, unopenable.gif).
+                                                                                                                                                                       
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ hexeditor unopenable.gif
+                                                                        
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ display unopenable.gif  
+display: Invalid colormap index (index 29 >= 2 colors, unopenable.gif).
+                                                                        
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ hexeditor unopenable.gif
+                                                                        
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ display unopenable.gif  
+                                                                        
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ display unopenable.gif
+^Z
+zsh: suspended  display unopenable.gif
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ display unopenable.gif
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ sudo apt install gimp
+[sudo] password for brian: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+gimp is already the newest version (2.10.36-2+b1).
+0 upgraded, 0 newly installed, 0 to remove and 1563 not upgraded.
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/currupted_file]
+└─$ gimp unopenable.gif 
+GIF: bogus character 0x0a, ignoring.
+GIF: bogus character 0x00, ignoring.
+GIF: bogus character 0x00, ignoring.
+GIF: bogus character 0x00, ignoring.
+GIF: bogus character 0x0a, ignoring.
+GIF: bogus character 0x00, ignoring.
+GIF: bogus character 0x00, ignoring.
+GIF: bogus character 0x00, ignoring.
+
+
+
+
