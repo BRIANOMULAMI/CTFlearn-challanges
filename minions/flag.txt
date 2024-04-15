@@ -1,0 +1,133 @@
+
+#when you run strings on Hey_You.png  you wilfind a url that will lead you to a place to download 
+ Only_Few_Steps.jpg
+
+ #After that continue with the following procedure
+
+
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/minions]
+└─$ ls
+Hey_You.png  Only_Few_Steps.jpg
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/minions]
+└─$ strings Only_Few_Steps.jpg > brian.txt
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/minions]
+└─$ ls
+Hey_You.png  Only_Few_Steps.jpg  brian.txt
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/minions]
+└─$ subl brian.txt                        
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/minions]
+└─$ binwalk --dd='.*' Only_Few_Steps.jpg 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+30            0x1E            TIFF image data, little-endian offset of first image directory: 8
+426           0x1AA           Copyright string: "Copyright (c) 1998 Hewlett-Packard Company"
+141318        0x22806         RAR archive data, version 5.x
+
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/minions]
+└─$ ls
+Hey_You.png  Only_Few_Steps.jpg  _Only_Few_Steps.jpg.extracted  brian.txt
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/minions]
+└─$ cd _Only_Few_Steps.jpg.extracted 
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ ls
+0  1AA  1E  22806
+                                                                                                               
+YouWon(Almost).jpg
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ LS
+LS: command not found
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ ls
+0  1AA  1E  22806
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ file 22806 
+22806: RAR archive data, v5
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ subl 22806    
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ unrar x 22806 
+
+UNRAR 7.00 beta 2 freeware      Copyright (c) 1993-2023 Alexander Roshal
+
+
+Extracting from 22806
+
+Extracting  YouWon(Almost).jpg                                        OK 
+All OK
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ ls
+ 0   1AA   1E   22806  'YouWon(Almost).jpg'
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ display YouWon\(Almost\).jpg 
+display: Corrupt JPEG data: 11 extraneous bytes before marker 0xd9 (YouWon(Almost).jpg).
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ strings YouWon\(Almost\).jpg 
+JFIF
+;CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 80
+ , #&')*)
+-0-(0%()(
+((((((((((((((((((((((((((((((((((((((((((((((((((
+$3br
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+        #3R
+&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+CJ:QE
+@       J(
+@sKE
+"i`"7
+d;%_F
+kPhp
+x&      d
+E1\7Ni
+.))i
+        KE&h
+(4Q@
+*Jc}
+ZC@
+DSJ"]
+CTF{VmtaU1IxUXhUbFZSYXpsV1RWUnNRMVpYZEZkYWJFWTJVVmhrVlZGVU1Eaz0=)
+
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ strings YouWon\(Almost\).jpg > flag.txt
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ ls
+ 0   1AA   1E   22806  'YouWon(Almost).jpg'   flag.txt
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ subl flag.txt                          
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ echo "VmtaU1IxUXhUbFZSYXpsV1RWUnNRMVpYZEZkYWJFWTJVVmhrVlZGVU1Eaz0=" | base64 -d
+VkZSR1QxTlVRazlWTVRsQ1ZXdFdabEY2UVhkVVFUMDk=                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ echo "VkZSR1QxTlVRazlWTVRsQ1ZXdFdabEY2UVhkVVFUMDk= " | base64 -d
+VFRGT1NUQk9VMTlCVWtWZlF6QXdUQT09base64: invalid input
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ echo "VkZSR1QxTlVRazlWTVRsQ1ZXdFdabEY2UVhkVVFUMDk=" | base64 -d 
+VFRGT1NUQk9VMTlCVWtWZlF6QXdUQT09                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ echo "VFRGT1NUQk9VMTlCVWtWZlF6QXdUQT09" | base64 -d
+TTFOSTBOU19BUkVfQzAwTA==                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/minions/_Only_Few_Steps.jpg.extracted]
+└─$ echo "TTFOSTBOU19BUkVfQzAwTA==" | base64 -d
+M1NI0NS_ARE_C00L                                                                                                                                 
