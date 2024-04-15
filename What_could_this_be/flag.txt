@@ -1,0 +1,14 @@
+#You need to find what kind of encyption it is before youn decode it
+
+#use this site
+https://www.dcode.fr/cipher-identifier
+
+#you will find that the mostlickly cypher is fuckjs language
+
+#Then now decode using the site
+https://www.dcode.fr/jsfuck-language
+
+
+#flag 
+
+flag{5uch_j4v4_5crip7_much_w0w}
