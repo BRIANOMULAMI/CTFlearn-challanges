@@ -1,0 +1,46 @@
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Simple_Steganography]
+└─$ exiftool Minions1.jpeg 
+ExifTool Version Number         : 12.67
+File Name                       : Minions1.jpeg
+Directory                       : .
+File Size                       : 6.9 kB
+File Modification Date/Time     : 2024:04:15 13:51:08+03:00
+File Access Date/Time           : 2024:04:15 13:51:54+03:00
+File Inode Change Date/Time     : 2024:04:15 13:51:54+03:00
+File Permissions                : -rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.01
+Resolution Unit                 : None
+X Resolution                    : 1
+Y Resolution                    : 1
+Current IPTC Digest             : b9e8892a1b55650cf0a6341fe676d194
+Keywords                        : myadmin
+Application Record Version      : 4
+Image Width                     : 225
+Image Height                    : 225
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 225x225
+Megapixels                      : 0.051
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Simple_Steganography]
+└─$ steghide extract -sf Minions1.jpeg 
+Enter passphrase: 
+wrote extracted data to "raw.txt".
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Simple_Steganography]
+└─$ ls
+Minions1.jpeg  _Minions1.jpeg.extracted  raw.txt
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Simple_Steganography]
+└─$ cat raw.txt 
+AEMAVABGAGwAZQBhAHIAbgB7AHQAaABpAHMAXwBpAHMAXwBmAHUAbgB9
+
+                                                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Simple_Steganography]
+└─$ echo "AEMAVABGAGwAZQBhAHIAbgB7AHQAaABpAHMAXwBpAHMAXwBmAHUAbgB9" | base64 -d       
+CTFlearn{this_is_fun}                                                                                                                                 
