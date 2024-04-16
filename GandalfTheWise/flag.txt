@@ -1,0 +1,40 @@
+Gandalf.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "Q1RGbGVhcm57eG9yX2lzX3lvdXJfZnJpZW5kfQo=", comment: "xD6kfO2UrE5SnLQ6WgESK4kvD/Y/rDJPXNU45k/p", comment: "h2riEIj13iAp29VUPmB+TadtZppdw3AuO7JRiDyU", baseline, precision 8, 225x225, components 3
+
+Q1RGbGVhcm57eG9yX2lzX3lvdXJfZnJpZW5kfQo=
+xD6kfO2UrE5SnLQ6WgESK4kvD/Y/rDJPXNU45k/p
+h2riEIj13iAp29VUPmB+TadtZppdw3AuO7JRiDyU
+
+
+                                                                                                
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/GandalfTheWise]
+└─$ echo "Q1RGbGVhcm57eG9yX2lzX3lvdXJfZnJpZW5kfQo=" | base64 -d
+CTFlearn{xor_is_your_friend}
+ # This gives us a hint that we may ve to deal with xor on the remaining base64s
+
+
+
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/GandalfTheWise]
+└─$ echo "xD6kfO2UrE5SnLQ6WgESK4kvD/Y/rDJPXNU45k/p" | base64 -d > first.txt
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/GandalfTheWise]
+└─$ ls
+Gandalf.jpg  brian.txt  first.txt
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/GandalfTheWise]
+└─$ subl first.txt
+
+#file name first.txt is basicall 
+xD6kfO2UrE5SnLQ6WgESK4kvD/Y/rDJPXNU45k/p  passed through https://cryptii.com/
+
+#file name second.txt is basically
+h2riEIj13iAp29VUPmB+TadtZppdw3AuO7JRiDyU  passed through https://cryptii.com/
+
+#use this site https://xor.pw/#
+pass the content of first.txt and second.txt and calculate the xor
+
+
+# flag
+CTFlearn{Gandalf.BilboBaggins}
+
+
+
