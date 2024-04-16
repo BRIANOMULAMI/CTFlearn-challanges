@@ -1,0 +1,79 @@
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Basic_Android_RE_1]
+└─$ ls
+BasicAndroidRE1.apk  BasicAndroidRE1.apk_Decompiler.com.zip  resources  sources
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/my docs/CTF/ctflearn/Basic_Android_RE_1]
+└─$ cd sources
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/Basic_Android_RE_1/sources]
+└─$ ls
+android  androidx  com  org
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/CTF/ctflearn/Basic_Android_RE_1/sources]
+└─$ cd com     
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/ctflearn/Basic_Android_RE_1/sources/com]
+└─$ ls
+example
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/ctflearn/Basic_Android_RE_1/sources/com]
+└─$ cd example 
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/Basic_Android_RE_1/sources/com/example]
+└─$ ls
+secondapp
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/Basic_Android_RE_1/sources/com/example]
+└─$ cd secondapp 
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/sources/com/example/secondapp]
+└─$ ls 
+BuildConfig.java  MainActivity.java  R.java
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/sources/com/example/secondapp]
+└─$ cat MainActivity.java 
+package com.example.secondapp;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import org.apache.commons.codec.digest.DigestUtils;
+
+public class MainActivity extends AppCompatActivity {
+    /* access modifiers changed from: protected */
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        setContentView((int) R.layout.activity_main);
+    }
+
+    public void submitPassword(View view) {
+        EditText editText = (EditText) findViewById(R.id.editText2);
+        if (DigestUtils.md5Hex(editText.getText().toString()).equalsIgnoreCase("b74dec4f39d35b6a2e6c48e637c8aedb")) {
+            ((TextView) findViewById(R.id.textView)).setText("Success! CTFlearn{" + editText.getText().toString() + "_is_not_secure!}");
+        }
+    }
+}
+                                                                                                 
+┌──(brian㉿BRIAN)-[~/…/sources/com/example/secondapp]
+└─$ cd ..                
+                                                                                  
+┌──(brian㉿BRIAN)-[~/…/Basic_Android_RE_1/sources/com/example]
+└─$ cd ..
+                                                                                  
+┌──(brian㉿BRIAN)-[~/…/ctflearn/Basic_Android_RE_1/sources/com]
+└─$ cd ..
+
+
+
+
+
+#when you deccrypt the md5 file you get
+b74dec4f39d35b6a2e6c48e637c8aedb == Spring2019
+
+("Success! CTFlearn{" + editText.getText().toString() + "_is_not_secure!}");
+
+CTLlearn{Spring2019_is_not_secure!}
+
