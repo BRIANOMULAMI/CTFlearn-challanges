@@ -1,0 +1,13 @@
+#Download stegsolve 
+#Then run the following command
+java -jar ~/Downloads/stegsolve/bin/stegsolve.jar
+
+#Replace the path with the pathin ypur pc
+
+#teps
+Analize> sterogramsolver
+press the > down till offset 102
+#offset is located on the upper right of the stegsolve
+
+#flag
+flag{dOnt_m3s5_w1th_th3_KGB}
